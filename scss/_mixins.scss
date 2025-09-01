@@ -1,0 +1,24 @@
+
+// Mixin para botão
+@mixin botao($bg-color, $color: #fff) {
+  display: inline-block;
+  padding: $espaco-sm $espaco-md;
+  border-radius: 0.5rem;
+  background-color: $bg-color;
+  color: $color;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+// Mixin para centralizar flex
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,25 @@
+
+/* Reset / base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $fonte-base;
+  font-size: $tamanho-base;
+  color: $cor-texto;
+  background: $cor-clara;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
