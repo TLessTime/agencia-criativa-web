@@ -1,0 +1,54 @@
+.btn {
+  @include botao($cor-primaria);
+
+  &--primary {
+    @include botao($cor-primaria);
+  }
+
+  &--accent {
+    @include botao($cor-secundaria);
+  }
+}
+
+.card {
+  padding: $espaco-md;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+  h3 {
+    margin-bottom: calc($espaco-md / 2);
+    color: $cor-escura;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $espaco-md;
+
+  &__field {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-weight: 600;
+      margin-bottom: calc($espaco-sm / 2);
+    }
+
+    input, textarea {
+      padding: $espaco-sm;
+      border: 1px solid lighten($cor-escura, 40%);
+      border-radius: 0.3rem;
+    }
+
+    &--full {
+      flex: 1 1 100%;
+    }
+  }
+}
