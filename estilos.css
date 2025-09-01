@@ -1,0 +1,246 @@
+/* --------- Reset e variáveis --------- */
+:root{
+  --bg: #121216;
+  --text: #e8eaf1;
+  --muted: #b8bed1;
+  --primary: #5469d4;
+  --accent: #ffc65c;
+  --card: #1a1b22;
+  --maxw: 1100px;
+  --radius: 1.2rem;
+  --space: 1rem;
+  --shadow: 0 10px 30px rgba(0,0,0,.25);
+  font-size: 16px; /* base para rem */
+}
+
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height:1.6;
+  color: var(--text);
+  background: radial-gradient(120vw 80vh at 10% -10%, rgba(84,105,212,.25), transparent 60%), var(--bg);
+}
+
+/* --------- Layout utilitários --------- */
+.container{
+  width: min(92vw, var(--maxw));
+  margin-inline: auto;
+  padding-block: clamp(2rem, 5vw, 4rem);
+}
+
+h1,h2,h3{ line-height:1.2; margin:0 0 0.75em; }
+h1{ font-size: clamp(1.8rem, 4vw + 1rem, 3rem); }
+h2{ font-size: clamp(1.4rem, 2.4vw + 1rem, 2.2rem); }
+h3{ font-size: clamp(1.1rem, 1.6vw + 0.8rem, 1.4rem); }
+
+p, li { color: var(--muted); }
+
+.btn{
+  display:inline-block;
+  padding: 0.9rem 1.2rem;
+  border-radius: calc(var(--radius) - .4rem);
+  text-decoration:none;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+  will-change: transform;
+}
+.btn--primary{ background: var(--primary); color: white; }
+.btn--accent{ background: var(--accent); color: #2b2b2b; }
+.btn:hover{ transform: translateY(-2px); box-shadow: var(--shadow); }
+
+.card{
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  box-shadow: 0 1px 0 rgba(255,255,255,.05) inset;
+}
+
+/* --------- Header e navegação --------- */
+.topo{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(18,18,22,.7);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  padding: .6rem 4vw;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+  text-decoration:none;
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing:.2px;
+  font-size: 1.05rem;
+}
+.brand__text{ white-space:nowrap; }
+
+.nav{
+  margin-left: auto;
+}
+.nav__list{
+  display:flex;
+  gap: clamp(.6rem, 2vw, 1.2rem);
+  list-style:none;
+  margin:0; padding:0;
+}
+.nav__list a{
+  color: var(--muted);
+  text-decoration:none;
+  padding:.5rem .7rem;
+  border-radius:.6rem;
+}
+.nav__list a:hover{ background: rgba(255,255,255,.06); color: var(--text); }
+
+/* Hamburguer (mobile) */
+.nav__toggle{ display:none; }
+.nav__hamb{
+  display:none;
+  cursor:pointer;
+  width: 2rem; height: 2rem;
+  align-items:center; justify-content:center;
+  margin-left:auto;
+}
+.nav__hamb span{
+  display:block; height:2px; width:1.4rem; background: var(--text); margin:.22rem 0; transition:.3s ease;
+}
+
+/* --------- Hero --------- */
+.hero{
+  position:relative;
+  min-height: 60vh;
+  display:grid;
+  grid-template-rows: 1fr;
+  place-items:center;
+  overflow:hidden;
+}
+.hero__img{
+  width:100%;
+  height: 44vh;
+  object-fit: cover;
+  filter: saturate(1.1);
+}
+.hero__content{
+  position: absolute;
+  inset: auto 50% 8% 4%;
+  transform: translateX(0);
+  background: rgba(0,0,0,.5);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius);
+  padding: clamp(1rem, 3vw, 1.6rem);
+  max-width: min(90vw, 36rem);
+}
+
+/* --------- Seção Sobre --------- */
+.sobre .valores{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding-left: 1rem;
+}
+
+/* --------- Seção Serviços (CSS Grid) --------- */
+.grid-servicos{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(0.8rem, 2vw, 1.2rem);
+}
+.grid-servicos .card{
+  grid-column: span 12;
+}
+@media (min-width: 560px){
+  .grid-servicos .card{ grid-column: span 6; }
+}
+@media (min-width: 920px){
+  .grid-servicos .card{ grid-column: span 4; }
+}
+
+/* --------- Depoimentos --------- */
+.depo-lista{
+  display:flex;
+  gap: clamp(0.8rem, 2.2vw, 1.2rem);
+  flex-wrap: wrap;
+}
+.depo{
+  flex: 1 1 260px;
+  min-width: 240px;
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+.depo img{ border-radius: 50%; display:block; margin-bottom:.6rem; }
+
+/* --------- Contato --------- */
+.contato__grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.contato__info{ font-style: normal; }
+.form{
+  display:grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: .8rem;
+}
+.campo{ grid-column: span 3; display:flex; flex-direction:column; gap:.4rem; }
+.campo--full{ grid-column: span 6; }
+label{ font-weight:600; }
+input, textarea{
+  width:100%;
+  padding:.85rem 1rem;
+  border-radius:.8rem;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.03);
+  color: var(--text);
+}
+input:focus, textarea:focus{ outline: 2px solid var(--primary); }
+
+@media (min-width: 800px){
+  .contato__grid{
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* --------- Footer --------- */
+.rodape{
+  text-align:center;
+  padding: 2rem 1rem 4rem;
+  color: var(--muted);
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+/* --------- Media Queries para nav responsiva --------- */
+@media (max-width: 850px){
+  .nav__hamb{ display:flex; }
+  .nav{ position: fixed; top: 60px; right: 4vw; background: rgba(18,18,22,.95); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding:.6rem; display:none; }
+  .nav__list{ flex-direction:column; }
+  .nav__toggle:checked ~ .nav{ display:block; }
+  .nav__toggle:checked + .nav__hamb span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
+  .nav__toggle:checked + .nav__hamb span:nth-child(2){ opacity:0; }
+  .nav__toggle:checked + .nav__hamb span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
+}
+
+/* --------- Preferência de esquema de cores --------- */
+@media (prefers-color-scheme: light){
+  :root{
+    --bg: #f6f7fb;
+    --text: #111318;
+    --muted: #3d4251;
+    --card: #ffffff;
+  }
+  body{ background: radial-gradient(120vw 80vh at 10% -10%, rgba(84,105,212,.15), transparent 60%), var(--bg); }
+  .topo{ background: rgba(255,255,255,.7); }
+  .nav__list a:hover{ background: rgba(0,0,0,.06); }
+}

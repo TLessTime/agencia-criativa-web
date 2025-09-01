@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agência Criativa Web</title>
+  <meta name="description" content="Agência de design digital: sites modernos, branding e experiências responsivas." />
+  <link rel="preload" href="assets/logo-192.png" as="image" imagesrcset="assets/logo-64.png 64w, assets/logo-192.png 192w" imagesizes="(max-width: 480px) 64px, 192px">
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <header class="topo" id="topo">
+    <a class="brand" href="#topo">
+      <img src="assets/logo-192.png"
+           srcset="assets/logo-64.png 64w, assets/logo-192.png 192w"
+           sizes="(max-width: 480px) 48px, 72px"
+           width="72" height="72" alt="Logotipo Agência Criativa Web" />
+      <span class="brand__text">Agência Criativa Web</span>
+    </a>
+
+    <!-- Menu responsivo (CSS-only) -->
+    <input type="checkbox" id="nav-toggle" class="nav__toggle" aria-label="Abrir menu" />
+    <label for="nav-toggle" class="nav__hamb">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="nav" aria-label="Navegação primária">
+      <ul class="nav__list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#sobre">Sobre Nós</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-labelledby="hero-title">
+      <picture>
+        <source srcset="assets/banner-1440.jpg" media="(min-width: 1024px)">
+        <source srcset="assets/banner-960.jpg" media="(min-width: 600px)">
+        <img src="assets/banner-480.jpg" alt="Banner com o nome Agência Criativa Web" class="hero__img">
+      </picture>
+      <div class="hero__content">
+        <h1 id="hero-title">Criamos experiências digitais que elevam a sua marca</h1>
+        <p>Sites rápidos, identidades memoráveis e resultados medíveis — do conceito ao código.</p>
+        <a href="#contato" class="btn btn--primary">Fale com a gente</a>
+      </div>
+    </section>
+
+    <section id="sobre" class="sobre container" aria-labelledby="sobre-title">
+      <h2 id="sobre-title">Sobre Nós</h2>
+      <p>Somos uma equipe multidisciplinar apaixonada por design, tecnologia e estratégia. Unimos pesquisa, estética e performance para construir produtos digitais que geram valor de verdade.</p>
+      <ul class="valores">
+        <li><strong>Colaboração:</strong> trabalhamos lado a lado com você.</li>
+        <li><strong>Qualidade:</strong> atenção aos detalhes, do briefing ao deploy.</li>
+        <li><strong>Resultados:</strong> foco em métricas e impacto no negócio.</li>
+      </ul>
+    </section>
+
+    <section id="servicos" class="servicos container" aria-labelledby="servicos-title">
+      <h2 id="servicos-title">Serviços</h2>
+      <div class="grid-servicos">
+        <article class="card">
+          <h3>Design de Interfaces (UI)</h3>
+          <p>Protótipos, sistemas de design e telas pensadas para conversão e acessibilidade.</p>
+        </article>
+        <article class="card">
+          <h3>Experiência do Usuário (UX)</h3>
+          <p>Pesquisas, jornadas e testes com usuários para otimizar produtos digitais.</p>
+        </article>
+        <article class="card">
+          <h3>Desenvolvimento Web</h3>
+          <p>Sites e aplicações modernas com foco em performance, SEO e responsividade.</p>
+        </article>
+        <article class="card">
+          <h3>Branding</h3>
+          <p>Identidade visual, guidelines e materiais para fortalecer sua marca.</p>
+        </article>
+        <article class="card">
+          <h3>Conteúdo & SEO</h3>
+          <p>Estratégia de conteúdo, copywriting e otimizações para ranquear melhor.</p>
+        </article>
+        <article class="card">
+          <h3>Suporte & Growth</h3>
+          <p>Monitoramento, otimizações contínuas e experimentos orientados por dados.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="depoimentos" class="depoimentos container" aria-labelledby="depo-title">
+      <h2 id="depo-title">Depoimentos</h2>
+      <div class="depo-lista">
+        <figure class="depo">
+          <img src="assets/cli-ana.jpg" alt="Foto da cliente Ana" width="80" height="80" />
+          <blockquote>“A equipe entregou um site lindo e muito rápido. Nossas conversões subiram em poucas semanas.”</blockquote>
+          <figcaption>— Ana Souza, Loja Vitrine</figcaption>
+        </figure>
+        <figure class="depo">
+          <img src="assets/cli-bruno.jpg" alt="Foto do cliente Bruno" width="80" height="80" />
+          <blockquote>“Processo transparente do início ao fim. Recomendo pela clareza e cuidado com o detalhe.”</blockquote>
+          <figcaption>— Bruno Lima, TechStart</figcaption>
+        </figure>
+        <figure class="depo">
+          <img src="assets/cli-carla.jpg" alt="Foto da cliente Carla" width="80" height="80" />
+          <blockquote>“Branding impecável. Nossa marca finalmente tem personalidade e consistência.”</blockquote>
+          <figcaption>— Carla Mendes, Café Criativo</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="contato" class="contato container" aria-labelledby="contato-title">
+      <h2 id="contato-title">Contato</h2>
+      <div class="contato__grid">
+        <address class="contato__info">
+          <p><strong>Endereço:</strong> Av. Exemplo, 123 - Centro, São Paulo - SP</p>
+          <p><strong>Telefone:</strong> (11) 99999-0000</p>
+          <p><strong>E-mail:</strong> contato@agenciacriativaweb.com</p>
+        </address>
+
+        <form class="form" aria-label="Formulário de contato" action="#" method="post">
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+          </div>
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required placeholder="voce@email.com">
+          </div>
+          <div class="campo campo--full">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Como podemos ajudar?"></textarea>
+          </div>
+          <button type="submit" class="btn btn--accent">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; <span id="ano"></span> Agência Criativa Web — Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Atualiza ano automaticamente (sem frameworks)
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
